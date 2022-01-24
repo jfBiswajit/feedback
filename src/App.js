@@ -16,16 +16,22 @@ function App() {
     },
   ];
 
+  const showComments = true;
+
+  const commentsBlock = (
+    <ul>
+      {comments.map((comment) => (
+        <li key={comment.id}> {comment.text} </li>
+      ))}
+    </ul>
+  );
+
   return (
     <div>
       <h1> {title} </h1>
       <p> {body} </p>
       <h3> Comments ({comments.length}) </h3>
-      <ul>
-        {comments.map((comment) => (
-          <li key={comment.id}> {comment.text} </li>
-        ))}
-      </ul>
+      {showComments && commentsBlock}
     </div>
   );
 }
