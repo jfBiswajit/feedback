@@ -3,9 +3,6 @@ import Card from './shared/Card';
 import PropTypes from 'prop-types';
 
 function FeedbackItem({ item, handelDelete }) {
-  const handelClick = (id) => {
-    console.log(id);
-  };
   return (
     <Card>
       <div className="num-display"> {item.rating} </div>
