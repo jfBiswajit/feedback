@@ -5,11 +5,16 @@ import { useState } from 'react';
 
 function App() {
   const [feedbacks, setFeedback] = useState(Feedbacks);
+
+  const deleteFeedback = (id) => {
+    setFeedback(feedbacks.filter((item) => item.id !== id));
+  };
+
   return (
     <>
       <Header />
       <div className="container">
-        <FeedbackList feedbacks={feedbacks} />
+        <FeedbackList handelDelete={deleteFeedback} feedbacks={feedbacks} />
       </div>
     </>
   );
