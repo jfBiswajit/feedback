@@ -4,9 +4,10 @@ import Header from './components/Header';
 import FeedbackList from './components/FeedbackList';
 import Feedbacks from './components/data/Feedbacks';
 import { useState } from 'react';
+import AboutIconLink from './components/AboutIconLink';
+import AboutPage from './pages/AboutPage';
 import FeedbackStats from './components/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm';
-import AboutPage from './pages/AboutPage';
 
 function App() {
   const [feedbacks, setFeedback] = useState(Feedbacks);
@@ -41,8 +42,9 @@ function App() {
               </>
             }
           ></Route>
-          <Route path="/about" element={<AboutPage/>}>Hi there!</Route>
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
+        <AboutIconLink />
       </div>
     </Router>
   );
